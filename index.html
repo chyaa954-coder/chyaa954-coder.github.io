@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Pribadi Saya</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #eff8ff;
+    color: #263746;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #172536;
+    color: white;
+}
+
+header {
+    background: #83c9ed;
+    padding: 17px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #174c70;
+}
+
+button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 20px;
+    background: #398fc2;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+button:hover {
+    background: #23658e;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px;
+}
+
+section {
+    margin: 35px 0;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 4px 15px #b9d9eb;
+}
+
+.dark section {
+    background: #25384c;
+    box-shadow: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.profile {
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #83c9ed;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #398fc2;
+    margin-bottom: 12px;
+}
+
+h2 {
+    color: #398fc2;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #83c9ed;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.info {
+    margin: 12px 0;
+    padding: 12px;
+    background: #e8f5fc;
+    border-radius: 10px;
+}
+
+.dark .info {
+    background: #354b61;
+}
+
+.education {
+    border-left: 4px solid #69bce8;
+    padding: 12px 20px;
+    margin: 15px 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills span {
+    background: #b5e2f7;
+    color: #174c70;
+    padding: 12px 18px;
+    border-radius: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.gallery div {
+    background: #e8f5fc;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 8px 0 15px;
+    border: 1px solid #a5cce0;
+    border-radius: 10px;
+    outline: none;
+}
+
+textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.dark input, .dark textarea {
+    background: #354b61;
+    color: white;
+}
+
+footer {
+    background: #83c9ed;
+    text-align: center;
+    padding: 22px;
+    color: white;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 13px;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <div class="logo">My Portfolio</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#profil">Profil</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#hobi">Hobi</a>
+        <a href="#kontak">Kontak</a>
+    </div>
+
+    <button onclick="ubahTema()">🌙 Tema</button>
+</nav>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<section class="hero" id="home">
+
+    <img id="fotoProfil"
+    class="profile"
+    src="https://placehold.co/300x300/83c9ed/ffffff?text=Foto+Profil"
+    alt="Foto Profil">
+
+    <br>
+
+    <label for="uploadFoto">📷 Ganti Foto Profil</label>
+    <input type="file" id="uploadFoto" accept="image/*">
+
+    <h1 id="namaHome">Varissa Cahaya Sri Mulyani</h1>
+
+    <p>Selamat datang di website pribadi saya!</p>
+
+    <p>
+        Ini adalah tempat untuk mengenal saya lebih dekat,
+        melihat profil, pendidikan, hobi, dan keterampilan saya.
+    </p>
+
+    <br>
+
+    <button onclick="document.getElementById('profil').scrollIntoView()">
+        Kenali Saya
+    </button>
+
+</section>
+
+<!-- PROFIL -->
+<section id="profil">
+
+    <h2>👤 Data Diri</h2>
+
+    <div class="info">Nama: <span id="nama">Varissa Cahaya Sri Mulyani</span></div>
+    <div class="info">Tempat, Tanggal Lahir: Subang, 27 Mei 2008<span id="ttl"></span></div>
+    <div class="info">Jenis Kelamin: <span id="jk">Perempuan</span></div>
+    <div class="info">Alamat: <span id="alamat">kp.krajan 2 Desa Kediri,Kecamatan Binong,Kabupaten Subang </span></div>
+    <div class="info">Email: <span id="email">chyaa954.gmail.com</span></div>
+    <div class="info">Status: <span id="status">Mahasiswa</span></div>
+
+    <button onclick="editProfil()">✏️ Edit Data Diri</button>
+
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan">
+
+    <h2>🎓 Riwayat Pendidikan</h2>
+
+    <div class="education">
+        <h3>SD Negeri Kediri</h3>
+        <p>2014 - 2020</p>
+    </div>
+
+    <div class="education">
+        <h3>SMP Negeri 1 Binong</h3>
+        <p>2020 - 2023</p>
+    </div>
+
+    <div class="education">
+        <h3>SMA Negeri 1 Pagaden</h3>
+        <p>2023 - 2026</p>
+    </div>
+
+    <div class="education">
+        <h3>S1 Universitas Mendiri</h3>
+        <p>2026 - Sekarang</p>
+    </div>
+
+</section>
+
+<!-- HOBI -->
+<section id="hobi">
+
+    <h2>🌸 Hobi Saya</h2>
+
+    <div class="gallery">
+        <div>📚<p>Membaca</p></div>
+        <div>🎵<p>Mendengarkan Musik</p></div>
+        <div>📷<p>Fotografi</p></div>
+        <div>✈️<p>traveling</p></div>
+    </div>
+
+</section>
+
+<!-- KEAHLIAN -->
+<section id="keahlian">
+
+    <h2>💻 Keterampilan</h2>
+
+    <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Microsoft Word</span>
+        <span>Microsoft Excel</span>
+        <span>Komunikasi</span>
+    </div>
+
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+
+    <h2>📩 Hubungi Saya</h2>
+
+    <p>Silakan kirim pesan melalui formulir berikut.</p>
+
+    <form id="formKontak">
+
+        <label>Nama</label>
+        <input type="text" id="pengirim"
+        placeholder="Masukkan nama" required>
+
+        <label>Email</label>
+        <input type="email" id="emailPengirim"
+        placeholder="Masukkan email" required>
+
+        <label>Pesan</label>
+        <textarea id="pesan"
+        placeholder="Tuliskan pesan..." required></textarea>
+
+        <button type="submit">Kirim Pesan</button>
+
+    </form>
+
+    <p id="hasilPesan"></p>
+
+</section>
+
+</div>
+
+<footer>
+    <p>© 2026 My Personal Website</p>
+    <p>Dibuat dengan HTML, CSS dan JavaScript ❤️</p>
+</footer>
+
+<script>
+
+// GANTI FOTO PROFIL
+document.getElementById("uploadFoto").addEventListener("change",
+function(event) {
+
+    const file = event.target.files[0];
+
+    if(file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            document.getElementById("fotoProfil").src =
+            e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    }
+
+});
+
+
+// GANTI TEMA
+function ubahTema() {
+    document.body.classList.toggle("dark");
+}
+
+
+// FORMULIR PESAN
+document.getElementById("formKontak").addEventListener(
+"submit", function(event) {
+
+    event.preventDefault();
+
+    let nama = document.getElementById("pengirim").value;
+    let pesan = document.getElementById("pesan").value;
+
+    document.getElementById("hasilPesan").textContent =
+    "Terima kasih, " + nama +
+    "! Pesan kamu berhasil diterima: " + pesan;
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
