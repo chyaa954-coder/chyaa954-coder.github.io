@@ -233,11 +233,25 @@ footer {
 <!-- HOME -->
 <section class="hero" id="home">
 
-<img id="fotoProfil"
-class="profile"
-src="https://placehold.co/300x300/83c9ed/ffffff?text=Foto+Profil"
-alt="Foto Profil">
+<div class="profil-container">
 
+    <img id="fotoProfil"
+    src="https://placehold.co/300x300?text=Foto"
+    class="profile"
+    alt="Foto Profil">
+
+    <br>
+
+    <label for="uploadFoto" class="tombol-foto">
+        📷 Pilih Foto dari Galeri
+    </label>
+
+    <input type="file"
+    id="uploadFoto"
+    accept="image/*"
+    hidden>
+
+</div>
     <br>
 
     <label for="uploadFoto">📷 Ganti Foto Profil</label>
